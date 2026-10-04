@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Luna | Restaurante</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span>☾</span> LUNA
+        </div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#menu">Menú</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+        <button class="cart-button" onclick="openCart()">
+            🛒
+            <span id="cart-count">0</span>
+        </button>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="inicio">
+
+        <div class="hero-content">
+
+            <p class="small-title">
+                RESTAURANTE • COCINA CONTEMPORÁNEA
+            </p>
+
+            <h1>
+                Sabores que
+                <br>
+                <em>iluminan</em> tu noche.
+            </h1>
+
+            <p class="hero-text">
+                Una experiencia gastronómica creada para disfrutar,
+                compartir y volver.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#menu" class="btn primary">
+                    Ver menú
+                </a>
+
+                <a href="#nosotros" class="btn secondary">
+                    Conócenos
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- NOSOTROS -->
+
+    <section class="intro" id="nosotros">
+
+        <div>
+
+            <p class="section-label">
+                NUESTRA HISTORIA
+            </p>
+
+            <h2>
+                Una mesa.
+                <br>
+                Una experiencia.
+            </h2>
+
+        </div>
+
+        <div class="intro-text">
+
+            <p>
+                En Luna creemos que comer es mucho más que alimentarse.
+                Es compartir momentos, descubrir sabores y crear recuerdos.
+            </p>
+
+            <p>
+                Nuestra cocina combina ingredientes frescos con una
+                presentación moderna y sabores que sorprenden.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MENU -->
+
+    <section class="menu-section" id="menu">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                NUESTRO MENÚ
+            </p>
+
+            <h2>
+                Lo que se te
+                <br>
+                <em>antoja hoy.</em>
+            </h2>
+
+        </div>
+
+
+        <!-- CATEGORIAS -->
+
+        <div class="categories">
+
+            <button
+                class="category active"
+                onclick="filterMenu('todos', this)">
+                Todos
+            </button>
+
+            <button
+                class="category"
+                onclick="filterMenu('entradas', this)">
+                Entradas
+            </button>
+
+            <button
+                class="category"
+                onclick="filterMenu('principales', this)">
+                Principales
+            </button>
+
+            <button
+                class="category"
+                onclick="filterMenu('postres', this)">
+                Postres
+            </button>
+
+            <button
+                class="category"
+                onclick="filterMenu('bebidas', this)">
+                Bebidas
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCTOS -->
+
+        <div class="products">
+
+
+            <!-- PRODUCTO 1 -->
+
+            <article
+                class="product"
+                data-category="entradas">
+
+                <div class="product-image image-1"></div>
+
+                <div class="product-info">
+
+                    <div>
+
+                        <h3>
+                            Bruschettas Luna
+                        </h3>
+
+                        <p>
+                            Pan artesanal, tomate fresco,
+                            albahaca y aceite de oliva.
+                        </p>
+
+                    </div>
+
+                    <strong>
+                        S/ 18
+                    </strong>
+
+                </div>
+
+                <button
+                    onclick="addToCart('Bruschettas Luna', 18)">
+                    Agregar al carrito
+                </button>
+
+            </article>
+
+
+            <!-- PRODUCTO 2 -->
+
+            <article
+                class="product"
+                data-category="principales">
+
+                <div class="product-image image-2"></div>
+
+                <div class="product-info">
+
+                    <div>
+
+                        <h3>
+                            Pasta Trufa
+                        </h3>
+
+                        <p>
+                            Pasta fresca, crema,
+                            parmesano y aceite de trufa.
+                        </p>
+
+                    </div>
+
+                    <strong>
+                        S/ 32
+                    </strong>
+
+                </div>
+
+                <button
+                    onclick="addToCart('Pasta Trufa', 32)">
+                    Agregar al carrito
+                </button>
+
+            </article>
+
+
+            <!-- PRODUCTO 3 -->
+
+            <article
+                class="product"
+                data-category="principales">
+
+                <div class="product-image image-3"></div>
+
+                <div class="product-info">
+
+                    <div>
+
+                        <h3>
+                            Risotto Luna
+                        </h3>
+
+                        <p>
+                            Arroz arborio, hongos,
+                            parmesano y hierbas frescas.
+                        </p>
+
+                    </div>
+
+                    <strong>
+                        S/ 36
+                    </strong>
+
+                </div>
+
+                <button
+                    onclick="addToCart('Risotto Luna', 36)">
+                    Agregar al carrito
+                </button>
+
+            </article>
+
+
+            <!-- PRODUCTO 4 -->
+
+            <article
+                class="product"
+                data-category="postres">
+
+                <div class="product-image image-4"></div>
+
+                <div class="product-info">
+
+                    <div>
+
+                        <h3>
+                            Tiramisú
+                        </h3>
+
+                        <p>
+                            Clásico tiramisú italiano
+                            con café y cacao.
+                        </p>
+
+                    </div>
+
+                    <strong>
+                        S/ 16
+                    </strong>
+
+                </div>
+
+                <button
+                    onclick="addToCart('Tiramisú', 16)">
+                    Agregar al carrito
+                </button>
+
+            </article>
+
+
+            <!-- PRODUCTO 5 -->
+
+            <article
+                class="product"
+                data-category="bebidas">
+
+                <div class="product-image image-5"></div>
+
+                <div class="product-info">
+
+                    <div>
+
+                        <h3>
+                            Limonada de la casa
+                        </h3>
+
+                        <p>
+                            Limonada natural con
+                            hierbabuena y hielo.
+                        </p>
+
+                    </div>
+
+                    <strong>
+                        S/ 10
+                    </strong>
+
+                </div>
+
+                <button
+                    onclick="addToCart('Limonada de la casa', 10)">
+                    Agregar al carrito
+                </button>
+
+            </article>
+
+
+            <!-- PRODUCTO 6 -->
+
+            <article
+                class="product"
+                data-category="postres">
+
+                <div class="product-image image-6"></div>
+
+                <div class="product-info">
+
+                    <div>
+
+                        <h3>
+                            Cheesecake
+                        </h3>
+
+                        <p>
+                            Cheesecake cremoso
+                            con frutos rojos.
+                        </p>
+
+                    </div>
+
+                    <strong>
+                        S/ 17
+                    </strong>
+
+                </div>
+
+                <button
+                    onclick="addToCart('Cheesecake', 17)">
+                    Agregar al carrito
+                </button>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <div>
+
+            <p class="section-label">
+                ¿LISTA PARA PROBAR?
+            </p>
+
+            <h2>
+                Tu próxima cena
+                <br>
+                <em>empieza aquí.</em>
+            </h2>
+
+        </div>
+
+        <a href="#menu" class="btn primary">
+            Ordenar ahora →
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer id="contacto">
+
+        <div class="footer-logo">
+            ☾ LUNA
+        </div>
+
+        <div class="footer-info">
+
+            <p>
+                📍 Lima, Perú
+            </p>
+
+            <p>
+                🕐 Lun – Dom | 12:00 – 23:00
+            </p>
+
+            <p>
+                📱 +51 941 969 809
+            </p>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 Luna Restaurante.
+            Todos los derechos reservados.
+        </p>
+
+    </footer>
+
+
+    <!-- FONDO DEL CARRITO -->
+
+    <div
+        class="cart-overlay"
+        id="cart-overlay"
+        onclick="closeCart()">
+    </div>
+
+
+    <!-- CARRITO -->
+
+    <aside
+        class="cart"
+        id="cart">
+
+        <div class="cart-header">
+
+            <h2>
+                Tu pedido
+            </h2>
+
+            <button onclick="closeCart()">
+                ✕
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCTOS DEL CARRITO -->
+
+        <div id="cart-items"></div>
+
+
+        <!-- TOTAL -->
+
+        <div class="cart-total">
+
+            <span>
+                Total
+            </span>
+
+            <strong>
+                S/
+                <span id="cart-total">
+                    0.00
+                </span>
+            </strong>
+
+        </div>
+
+
+        <!-- DATOS DEL CLIENTE -->
+
+        <div class="customer-form">
+
+            <h3>
+                Datos del pedido
+            </h3>
+
+            <input
+                type="text"
+                id="customer-name"
+                placeholder="Tu nombre *">
+
+            <input
+                type="tel"
+                id="customer-phone"
+                placeholder="Tu teléfono *">
+
+            <select id="order-type">
+
+                <option value="delivery">
+                    🚚 Delivery
+                </option>
+
+                <option value="pickup">
+                    🏪 Recojo en local
+                </option>
+
+            </select>
+
+            <input
+                type="text"
+                id="customer-address"
+                placeholder="Dirección de entrega">
+
+            <textarea
+                id="customer-notes"
+                placeholder="Notas del pedido (opcional)">
+            </textarea>
+
+        </div>
+
+
+        <!-- BOTON WHATSAPP -->
+
+        <button
+            class="checkout"
+            onclick="checkout()">
+
+            📲 Pedir por WhatsApp
+
+        </button>
+
+    </aside>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
